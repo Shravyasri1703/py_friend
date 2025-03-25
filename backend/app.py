@@ -12,6 +12,10 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
 
+@app.route('/')
+def greet():
+    return "<h1> Hello, welcome to PY_FRIENDSS !!! "
+
 import route
 with app.app_context():
     db.create_all()
@@ -19,6 +23,6 @@ with app.app_context():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
     
 
